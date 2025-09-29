@@ -1,0 +1,328 @@
+@prefix : <http://www.semanticweb.org/hasan/ontologies/2025/8/untitled-ontology-4/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/hasan/ontologies/2025/8/untitled-ontology-4/> .
+
+<http://www.restaurant.com/ontology#> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.restaurant.com/ontology#containsIngredient
+:containsIngredient rdf:type owl:ObjectProperty ;
+                    rdfs:domain :FoodItem ;
+                    rdfs:range :Ingredient .
+
+
+###  http://www.restaurant.com/ontology#orderedBy
+:orderedBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :FoodItem ;
+           rdfs:range :Customer .
+
+
+###  http://www.restaurant.com/ontology#preparedBy
+:preparedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :FoodItem ;
+            rdfs:range :Chef .
+
+
+###  http://www.restaurant.com/ontology#servedBy
+:servedBy rdf:type owl:ObjectProperty ;
+          rdfs:domain :FoodItem ;
+          rdfs:range :Waiter .
+
+
+###  http://www.restaurant.com/ontology#serves
+:serves rdf:type owl:ObjectProperty ;
+        rdfs:domain :Restaurant ;
+        rdfs:range :FoodItem .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.restaurant.com/ontology#hasAddress
+:hasAddress rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Restaurant ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :containsIngredient ;
+                          owl:minQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Ingredient
+                        ] ;
+            rdfs:range xsd:string .
+
+
+###  http://www.restaurant.com/ontology#hasCalories
+:hasCalories rdf:type owl:DatatypeProperty ;
+             rdfs:domain :FoodItem ;
+             rdfs:range xsd:integer .
+
+
+###  http://www.restaurant.com/ontology#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :FoodItem ;
+         rdfs:range xsd:string .
+
+
+###  http://www.restaurant.com/ontology#hasPrice
+:hasPrice rdf:type owl:DatatypeProperty ;
+          rdfs:domain :FoodItem ;
+          rdfs:range xsd:float .
+
+
+###  http://www.restaurant.com/ontology#hasRating
+:hasRating rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Restaurant ;
+           rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.restaurant.com/ontology#AffordableDish
+:AffordableDish rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( :FoodItem
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :hasPrice ;
+                                                             owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                  owl:onDatatype xsd:float ;
+                                                                                  owl:withRestrictions ( [ xsd:maxExclusive "15.0"^^xsd:float
+                                                                                                         ]
+                                                                                                       )
+                                                                                ]
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf :FoodItem .
+
+
+###  http://www.restaurant.com/ontology#AlcoholicBeverage
+:AlcoholicBeverage rdf:type owl:Class ;
+                   rdfs:subClassOf :Beverage .
+
+
+###  http://www.restaurant.com/ontology#Appetizer
+:Appetizer rdf:type owl:Class ;
+           rdfs:subClassOf :FoodItem .
+
+
+###  http://www.restaurant.com/ontology#Beverage
+:Beverage rdf:type owl:Class ;
+          rdfs:subClassOf :FoodItem .
+
+
+###  http://www.restaurant.com/ontology#Chef
+:Chef rdf:type owl:Class ;
+      rdfs:subClassOf :Person .
+
+
+###  http://www.restaurant.com/ontology#CompleteMeal
+:CompleteMeal rdf:type owl:Class ;
+              rdfs:subClassOf :FoodItem .
+
+
+###  http://www.restaurant.com/ontology#Customer
+:Customer rdf:type owl:Class ;
+          rdfs:subClassOf :Person .
+
+
+###  http://www.restaurant.com/ontology#Dessert
+:Dessert rdf:type owl:Class ;
+         rdfs:subClassOf :FoodItem .
+
+
+###  http://www.restaurant.com/ontology#FastFoodRestaurant
+:FastFoodRestaurant rdf:type owl:Class ;
+                    rdfs:subClassOf :Restaurant .
+
+
+###  http://www.restaurant.com/ontology#FineD_iningRestaurant
+:FineD_iningRestaurant rdf:type owl:Class ;
+                       rdfs:subClassOf :Restaurant .
+
+
+###  http://www.restaurant.com/ontology#FoodItem
+:FoodItem rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :containsIngredient ;
+                            owl:minQualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Ingredient
+                          ] .
+
+
+###  http://www.restaurant.com/ontology#HealthyVegetarianOption
+:HealthyVegetarianOption rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( :VegetarianDish
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty :hasCalories ;
+                                                                      owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                                                           owl:onDatatype xsd:integer ;
+                                                                                           owl:withRestrictions ( [ xsd:maxExclusive 500
+                                                                                                                  ]
+                                                                                                                )
+                                                                                         ]
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf :FoodItem .
+
+
+###  http://www.restaurant.com/ontology#Ingredient
+:Ingredient rdf:type owl:Class .
+
+
+###  http://www.restaurant.com/ontology#MainCourse
+:MainCourse rdf:type owl:Class ;
+            rdfs:subClassOf :FoodItem .
+
+
+###  http://www.restaurant.com/ontology#MealType
+:MealType rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:oneOf ( :breakfast
+                                            :dinner
+                                            :lunch
+                                          )
+                              ] .
+
+
+###  http://www.restaurant.com/ontology#MeatDish
+:MeatDish rdf:type owl:Class ;
+          rdfs:subClassOf :MainCourse .
+
+
+###  http://www.restaurant.com/ontology#MenuSelection
+:MenuSelection rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:unionOf ( :Appetizer
+                                                   :Dessert
+                                                   :MainCourse
+                                                 )
+                                   ] .
+
+
+###  http://www.restaurant.com/ontology#NonAlcoholicBeverage
+:NonAlcoholicBeverage rdf:type owl:Class ;
+                      rdfs:subClassOf :Beverage .
+
+
+###  http://www.restaurant.com/ontology#NonVegetarianDish
+:NonVegetarianDish rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :FoodItem
+                                                              [ rdf:type owl:Class ;
+                                                                owl:complementOf :VegetarianDish
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf :FoodItem .
+
+
+###  http://www.restaurant.com/ontology#Person
+:Person rdf:type owl:Class .
+
+
+###  http://www.restaurant.com/ontology#Protein
+:Protein rdf:type owl:Class ;
+         rdfs:subClassOf :Ingredient .
+
+
+###  http://www.restaurant.com/ontology#Restaurant
+:Restaurant rdf:type owl:Class .
+
+
+###  http://www.restaurant.com/ontology#Vegetable
+:Vegetable rdf:type owl:Class ;
+           rdfs:subClassOf :Ingredient .
+
+
+###  http://www.restaurant.com/ontology#VegetarianDish
+:VegetarianDish rdf:type owl:Class ;
+                rdfs:subClassOf :MainCourse .
+
+
+###  http://www.restaurant.com/ontology#Waiter
+:Waiter rdf:type owl:Class ;
+        rdfs:subClassOf :Person .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.restaurant.com/ontology#breakfast
+:breakfast rdf:type owl:NamedIndividual .
+
+
+###  http://www.restaurant.com/ontology#dinner
+:dinner rdf:type owl:NamedIndividual .
+
+
+###  http://www.restaurant.com/ontology#lunch
+:lunch rdf:type owl:NamedIndividual .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+
+# Individual Restaurants
+:tasteOfItaly rdf:type :FineDiningRestaurant ;
+    :hasName "Taste of Italy" ;
+    :hasRating "4.5"^^xsd:float ;
+    :hasAddress "123 Main Street" .
+
+:quickBite rdf:type :FastFoodRestaurant ;
+    :hasName "Quick Bite" ;
+    :hasRating "3.8"^^xsd:float ;
+    :hasAddress "456 Food Court" .
+
+# Individual People
+:chefMario rdf:type :Chef ;
+    :hasName "Mario Rossi" .
+
+:waiterJohn rdf:type :Waiter ;
+    :hasName "John Smith" .
+
+:customerSarah rdf:type :Customer ;
+    :hasName "Sarah Johnson" .
+
+# Individual Food Items
+:margheritaPizza rdf:type :MainCourse , :VegetarianDish ;
+    :hasName "Margherita Pizza" ;
+    :hasPrice "12.99"^^xsd:float ;
+    :hasCalories "800"^^xsd:integer ;
+    :preparedBy :chefMario ;
+    :servedBy :waiterJohn ;
+    :orderedBy :customerSarah .
+
+:caesarSalad rdf:type :Appetizer ;
+    :hasName "Caesar Salad" ;
+    :hasPrice "8.50"^^xsd:float ;
+    :hasCalories "300"^^xsd:integer ;
+    :preparedBy :chefMario .
+
+:tiramisu rdf:type :Dessert ;
+    :hasName "Tiramisu" ;
+    :hasPrice "7.00"^^xsd:float ;
+    :hasCalories "450"^^xsd:integer .
+
+# Individual Ingredients
+:tomato rdf:type :Vegetable .
+:mozzarella rdf:type :Ingredient .
+:basil rdf:type :Vegetable .
+
+# Relationships
+:tasteOfItaly :serves :margheritaPizza .
+:tasteOfItaly :serves :caesarSalad .
+:tasteOfItaly :serves :tiramisu .
+
+:margheritaPizza :containsIngredient :tomato .
+:margheritaPizza :containsIngredient :mozzarella .
+:margheritaPizza :containsIngredient :basil .

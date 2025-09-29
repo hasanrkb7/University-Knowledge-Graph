@@ -1,0 +1,60 @@
+@prefix : <http://www.restaurant.com/ontology#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Individual Restaurants
+:tasteOfItaly rdf:type :FineDiningRestaurant ;
+    :hasName "Taste of Italy" ;
+    :hasRating "4.5"^^xsd:float ;
+    :hasAddress "123 Main Street" .
+
+:quickBite rdf:type :FastFoodRestaurant ;
+    :hasName "Quick Bite" ;
+    :hasRating "3.8"^^xsd:float ;
+    :hasAddress "456 Food Court" .
+
+# Individual People
+:chefMario rdf:type :Chef ;
+    :hasName "Mario Rossi" .
+
+:waiterJohn rdf:type :Waiter ;
+    :hasName "John Smith" .
+
+:customerSarah rdf:type :Customer ;
+    :hasName "Sarah Johnson" .
+
+# Individual Food Items
+:margheritaPizza rdf:type :MainCourse , :VegetarianDish ;
+    :hasName "Margherita Pizza" ;
+    :hasPrice "12.99"^^xsd:float ;
+    :hasCalories "800"^^xsd:integer ;
+    :preparedBy :chefMario ;
+    :servedBy :waiterJohn ;
+    :orderedBy :customerSarah .
+
+:caesarSalad rdf:type :Appetizer ;
+    :hasName "Caesar Salad" ;
+    :hasPrice "8.50"^^xsd:float ;
+    :hasCalories "300"^^xsd:integer ;
+    :preparedBy :chefMario .
+
+:tiramisu rdf:type :Dessert ;
+    :hasName "Tiramisu" ;
+    :hasPrice "7.00"^^xsd:float ;
+    :hasCalories "450"^^xsd:integer .
+
+# Individual Ingredients
+:tomato rdf:type :Vegetable .
+:mozzarella rdf:type :Ingredient .
+:basil rdf:type :Vegetable .
+
+# Relationships
+:tasteOfItaly :serves :margheritaPizza .
+:tasteOfItaly :serves :caesarSalad .
+:tasteOfItaly :serves :tiramisu .
+
+:margheritaPizza :containsIngredient :tomato .
+:margheritaPizza :containsIngredient :mozzarella .
+:margheritaPizza :containsIngredient :basil .
