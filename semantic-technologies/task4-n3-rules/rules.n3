@@ -1,0 +1,4 @@
+@prefix ex: <http://www.smith-family.com/familyOntology.owl#> .
+
+{?person ex:hasWife ?spouse . ?spouse ex:hasChild ?child} => {?person ex:hasStepchild ?child} .
+{?person ex:hasHusband ?spouse . ?spouse ex:hasChild ?child} => {?person ex:hasStepchild ?child} .
