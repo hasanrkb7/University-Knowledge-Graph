@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.org/cv-ontology#"
+     xml:base="http://example.org/cv-ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:schema="http://schema.org/">
+    
+    <owl:Ontology rdf:about="http://example.org/cv-ontology"/>
+    
+    <!-- Classes -->
+    
+    <owl:Class rdf:about="http://example.org/cv-ontology#Person">
+        <rdfs:label>Person</rdfs:label>
+        <rdfs:comment>Represents a person with professional information</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://example.org/cv-ontology#WorkExperience">
+        <rdfs:label>Work Experience</rdfs:label>
+        <rdfs:comment>Represents a professional work position</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://example.org/cv-ontology#Education">
+        <rdfs:label>Education</rdfs:label>
+        <rdfs:comment>Represents an educational qualification</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://example.org/cv-ontology#Achievement">
+        <rdfs:label>Achievement</rdfs:label>
+        <rdfs:comment>Represents an award or recognition</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://example.org/cv-ontology#Skill">
+        <rdfs:label>Skill</rdfs:label>
+        <rdfs:comment>Represents a professional or technical skill</rdfs:comment>
+    </owl:Class>
+    
+    <owl:Class rdf:about="http://example.org/cv-ontology#Organization">
+        <rdfs:label>Organization</rdfs:label>
+        <rdfs:comment>Represents a company or institution</rdfs:comment>
+    </owl:Class>
+    
+    <!-- Object Properties (linking resources) -->
+    
+    <owl:ObjectProperty rdf:about="http://example.org/cv-ontology#hasWorkExperience">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Person"/>
+        <rdfs:range rdf:resource="http://example.org/cv-ontology#WorkExperience"/>
+        <rdfs:label>has work experience</rdfs:label>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://example.org/cv-ontology#hasEducation">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Person"/>
+        <rdfs:range rdf:resource="http://example.org/cv-ontology#Education"/>
+        <rdfs:label>has education</rdfs:label>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://example.org/cv-ontology#hasAchievement">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Person"/>
+        <rdfs:range rdf:resource="http://example.org/cv-ontology#Achievement"/>
+        <rdfs:label>has achievement</rdfs:label>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://example.org/cv-ontology#hasSkill">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Person"/>
+        <rdfs:range rdf:resource="http://example.org/cv-ontology#Skill"/>
+        <rdfs:label>has skill</rdfs:label>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://example.org/cv-ontology#workedAt">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#WorkExperience"/>
+        <rdfs:range rdf:resource="http://example.org/cv-ontology#Organization"/>
+        <rdfs:label>worked at</rdfs:label>
+    </owl:ObjectProperty>
+    
+    <owl:ObjectProperty rdf:about="http://example.org/cv-ontology#studiedAt">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Education"/>
+        <rdfs:range rdf:resource="http://example.org/cv-ontology#Organization"/>
+        <rdfs:label>studied at</rdfs:label>
+    </owl:ObjectProperty>
+    
+    <!-- Datatype Properties (literal values) -->
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#fullName">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>full name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#email">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>email</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#phoneNumber">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>phone number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#location">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>location</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#jobTitle">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#WorkExperience"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>job title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#startDate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label>start date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#endDate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+        <rdfs:label>end date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#description">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#degree">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Education"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>degree</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#cgpa">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Education"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>CGPA</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#gpa">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Education"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label>GPA</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#achievementName">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Achievement"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>achievement name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#skillName">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Skill"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>skill name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+    <owl:DatatypeProperty rdf:about="http://example.org/cv-ontology#organizationName">
+        <rdfs:domain rdf:resource="http://example.org/cv-ontology#Organization"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label>organization name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+</rdf:RDF>

@@ -1,0 +1,128 @@
+@prefix : <http://example.org/cv-ontology#> .
+@prefix cv: <http://example.org/cv-data#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
+
+# Person - Rakibul Hasan Remon
+cv:RakibulHasanRemon a :Person ;
+    :fullName "Rakibul Hasan Remon" ;
+    :email "remon@example.com" ;
+    :phoneNumber "+880-XXXXXXXXXX" ;
+    :location "Dhaka - 1219, Bangladesh" ;
+    foaf:homepage <http://rakibul-hasan-remon/> ;
+    foaf:linkedInProfile <https://www.linkedin.com/in/rakibul-hasan-remon/> ;
+    foaf:github <https://github.com/hasanrkb7> ;
+    :hasWorkExperience cv:NextVenturesJob, cv:XAgencyJob ;
+    :hasEducation cv:MScAI, cv:BScCSE, cv:HSC, cv:SSC ;
+    :hasAchievement cv:ExcellenceCard, cv:NEXTChampions, cv:AcademicScholarship ;
+    :hasSkill cv:DataAnalysisSkill, cv:PythonSkill, cv:JavaSkill, cv:MySQLSkill .
+
+# Work Experience 1
+cv:NextVenturesJob a :WorkExperience ;
+    :jobTitle "Executive, Client Experience" ;
+    :workedAt cv:NextVentures ;
+    :startDate "2023-11"^^xsd:date ;
+    :location "Pragati Sharani, Dhaka" ;
+    :description "Lead efforts to optimize client support through AI tools, ensuring efficient, accurate, and seamless client interactions. Design and implement data-driven performance tracking systems. Mentor teams and provide constructive feedback." .
+
+# Work Experience 2
+cv:XAgencyJob a :WorkExperience ;
+    :jobTitle "Junior Engagement Officer" ;
+    :workedAt cv:XAgency ;
+    :startDate "2022-02"^^xsd:date ;
+    :endDate "2023-10"^^xsd:date ;
+    :location "Mohakhali DOHS, Dhaka" ;
+    :description "Collaborate with the team to design and implement software solutions tailored for corporate customer support. Develop and integrate data-driven automation and AI technologies, including a virtual chatbot. Build an Omni-Channel Support platform." .
+
+# Organizations
+cv:NextVentures a :Organization ;
+    :organizationName "Next Ventures" ;
+    :location "Pragati Sharani, Dhaka" .
+
+cv:XAgency a :Organization ;
+    :organizationName "X - Integrated Marketing Agency" ;
+    :location "Mohakhali DOHS, Dhaka" .
+
+# Education 1
+cv:MScAI a :Education ;
+    :degree "M.Sc. in Artificial Intelligence" ;
+    :studiedAt cv:UniversityJyvaskyla ;
+    :startDate "2025-09"^^xsd:date ;
+    :location "Jyväskylän, Finland" .
+
+# Education 2
+cv:BScCSE a :Education ;
+    :degree "B.Sc. in Computer Science and Engineering" ;
+    :studiedAt cv:BracUniversity ;
+    :startDate "2018-09"^^xsd:date ;
+    :endDate "2022-10"^^xsd:date ;
+    :cgpa "3.44"^^xsd:decimal ;
+    :description "CGPA: 3.44 out of 4.00" .
+
+# Education 3
+cv:HSC a :Education ;
+    :degree "Higher Secondary Certificate" ;
+    :studiedAt cv:DhakaCityCollege ;
+    :endDate "2016"^^xsd:date ;
+    :gpa "5.00"^^xsd:decimal ;
+    :description "GPA: 5.00 out of 5.00" .
+
+# Education 4
+cv:SSC a :Education ;
+    :degree "Secondary School Certificate" ;
+    :studiedAt cv:IdealSchool ;
+    :endDate "2014"^^xsd:date ;
+    :gpa "5.00"^^xsd:decimal ;
+    :description "GPA: 5.00 out of 5.00" .
+
+# Educational Institutions
+cv:UniversityJyvaskyla a :Organization ;
+    :organizationName "University of Jyväskylä" ;
+    :location "Jyväskylän, Finland" .
+
+cv:BracUniversity a :Organization ;
+    :organizationName "Brac University" ;
+    :location "Dhaka, Bangladesh" .
+
+cv:DhakaCityCollege a :Organization ;
+    :organizationName "Dhaka City College" ;
+    :location "Dhaka, Bangladesh" .
+
+cv:IdealSchool a :Organization ;
+    :organizationName "Ideal School and College" ;
+    :location "Dhaka, Bangladesh" .
+
+# Achievements
+cv:ExcellenceCard a :Achievement ;
+    :achievementName "Excellence Card" ;
+    :description "Awarded an Excellence Card in recognition of dedication and hard work" .
+
+cv:NEXTChampions a :Achievement ;
+    :achievementName "NEXT Champions League" ;
+    :description "One of the winners of the in-house Forex Trading Champion League (Season 9)" .
+
+cv:AcademicScholarship a :Achievement ;
+    :achievementName "Academic Scholarship" ;
+    :description "Achieved academic scholarship three times for excellent results during B.Sc." .
+
+# Skills
+cv:DataAnalysisSkill a :Skill ;
+    :skillName "Data Analysis" .
+
+cv:PythonSkill a :Skill ;
+    :skillName "Python" .
+
+cv:JavaSkill a :Skill ;
+    :skillName "Java" .
+
+cv:MySQLSkill a :Skill ;
+    :skillName "MySQL" .
+
+cv:CustomerServiceSkill a :Skill ;
+    :skillName "Customer Service" .
+
+cv:TeamPlayerSkill a :Skill ;
+    :skillName "Team Player" .

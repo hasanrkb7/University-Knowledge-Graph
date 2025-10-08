@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:cv="http://example.org/cv-ontology#"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:schema="http://schema.org/"
+      version="XHTML+RDFa 1.1"
+      lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rakibul Hasan Remon - CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .contact-info {
+            margin-top: 15px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .job, .education-item, .achievement {
+            margin-bottom: 20px;
+        }
+        .job-title, .degree {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        .organization {
+            font-style: italic;
+            color: #555;
+        }
+        .date {
+            color: #777;
+            font-size: 0.9em;
+        }
+        .location {
+            color: #777;
+            font-size: 0.9em;
+        }
+        ul {
+            margin: 10px 0;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .skill-category {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .skill-category h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1em;
+        }
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+        .skill-list li {
+            padding: 3px 0;
+        }
+    </style>
+</head>
+<body vocab="http://example.org/cv-ontology#" 
+      prefix="cv: http://example.org/cv-ontology# 
+              foaf: http://xmlns.com/foaf/0.1/ 
+              schema: http://schema.org/">
+    
+    <div about="http://example.org/cv-data#RakibulHasanRemon" typeof="cv:Person">
+        <header>
+            <h1 property="cv:fullName">RAKIBUL HASAN REMON</h1>
+            <div class="contact-info">
+                <p>📧 Email: <span property="cv:email">remon@example.com</span></p>
+                <p>📱 Phone: <span property="
+cv:phoneNumber">+880-XXXXXXXXXX</span></p>
+<p>📍 Location: <span property="cv:location">Dhaka - 1219, Bangladesh</span></p>
+<p>🔗 LinkedIn: <a rel="foaf:linkedInProfile" href="https://www.linkedin.com/in/rakibul-hasan-remon/">rakibul-hasan-remon</a></p>
+<p>💻 GitHub: <a rel="foaf:github" href="https://github.com/hasanrkb7">hasanrkb7</a></p>
+</div>
+</header>
+<section id="experience">
+        <h2>EXPERIENCE</h2>
+        
+        <div rel="cv:hasWorkExperience">
+            <div about="http://example.org/cv-data#NextVenturesJob" typeof="cv:WorkExperience" class="job">
+                <div class="job-title" property="cv:jobTitle">Executive, Client Experience</div>
+                <div class="organization" rel="cv:workedAt">
+                    <span about="http://example.org/cv-data#NextVentures" typeof="cv:Organization" property="cv:organizationName">Next Ventures</span>
+                </div>
+                <div class="date">
+                    <span property="cv:startDate" content="2023-11" datatype="xsd:date">November 2023</span> – Ongoing
+                </div>
+                <div class="location" property="cv:location">Pragati Sharani, Dhaka</div>
+                <ul>
+                    <li property="cv:description">Lead efforts to optimize client support through AI tools, ensuring efficient, accurate, and seamless client interactions</li>
+                    <li property="cv:description">Design and implement data-driven performance tracking systems, driving operational efficiency and supporting organizational goals</li>
+                    <li property="cv:description">Mentor teams, provide constructive feedback, and lead initiatives to continuously improve internal processes and enhance the overall client experience</li>
+                </ul>
+            </div>
+        </div>
+
+        <div rel="cv:hasWorkExperience">
+            <div about="http://example.org/cv-data#XAgencyJob" typeof="cv:WorkExperience" class="job">
+                <div class="job-title" property="cv:jobTitle">Junior Engagement Officer</div>
+                <div class="organization" rel="cv:workedAt">
+                    <span about="http://example.org/cv-data#XAgency" typeof="cv:Organization" property="cv:organizationName">X - Integrated Marketing Agency</span>
+                </div>
+                <div class="date">
+                    <span property="cv:startDate" content="2022-02" datatype="xsd:date">February 2022</span> – 
+                    <span property="cv:endDate" content="2023-10" datatype="xsd:date">October 2023</span>
+                </div>
+                <div class="location" property="cv:location">Mohakhali DOHS, Dhaka</div>
+                <ul>
+                    <li property="cv:description">Collaborate with the team to design and implement software solutions tailored for corporate customer support</li>
+                    <li property="cv:description">Develop and integrate data-driven automation and AI technologies, including a virtual chatbot, to enhance client interactions</li>
+                    <li property="cv:description">Build an Omni-Channel Support platform, providing seamless, centralized communication for corporate customers of Robi</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>EDUCATION</h2>
+        
+        <div rel="cv:hasEducation">
+            <div about="http://example.org/cv-data#MScAI" typeof="cv:Education" class="education-item">
+                <div class="degree" property="cv:degree">M.Sc. in Artificial Intelligence</div>
+                <div class="organization" rel="cv:studiedAt">
+                    <span about="http://example.org/cv-data#UniversityJyvaskyla" typeof="cv:Organization" property="cv:organizationName">University of Jyväskylä</span>
+                </div>
+                <div class="date">
+                    <span property="cv:startDate" content="2025-09" datatype="xsd:date">September 2025</span> – Ongoing
+                </div>
+                <div class="location" property="cv:location">Jyväskylän, Finland</div>
+            </div>
+        </div>
+
+        <div rel="cv:hasEducation">
+            <div about="http://example.org/cv-data#BScCSE" typeof="cv:Education" class="education-item">
+                <div class="degree" property="cv:degree">B.Sc. in Computer Science and Engineering</div>
+                <div class="organization" rel="cv:studiedAt">
+                    <span about="http://example.org/cv-data#BracUniversity" typeof="cv:Organization" property="cv:organizationName">Brac University</span>
+                </div>
+                <div class="date">
+                    <span property="cv:startDate" content="2018-09" datatype="xsd:date">September 2018</span> – 
+                    <span property="cv:endDate" content="2022-10" datatype="xsd:date">October 2022</span>
+                </div>
+                <p><strong>CGPA:</strong> <span property="cv:cgpa" datatype="xsd:decimal">3.44</span> out of 4.00</p>
+            </div>
+        </div>
+
+        <div rel="cv:hasEducation">
+            <div about="http://example.org/cv-data#HSC" typeof="cv:Education" class="education-item">
+                <div class="degree" property="cv:degree">Higher Secondary Certificate</div>
+                <div class="organization" rel="cv:studiedAt">
+                    <span about="http://example.org/cv-data#DhakaCityCollege" typeof="cv:Organization" property="cv:organizationName">Dhaka City College</span>
+                </div>
+                <div class="date">
+                    <span property="cv:endDate" content="2016" datatype="xsd:date">2016</span>
+                </div>
+                <p><strong>GPA:</strong> <span property="cv:gpa" datatype="xsd:decimal">5.00</span> out of 5.00</p>
+            </div>
+        </div>
+
+        <div rel="cv:hasEducation">
+            <div about="http://example.org/cv-data#SSC" typeof="cv:Education" class="education-item">
+                <div class="degree" property="cv:degree">Secondary School Certificate</div>
+                <div class="organization" rel="cv:studiedAt">
+                    <span about="http://example.org/cv-data#IdealSchool" typeof="cv:Organization" property="cv:organizationName">Ideal School and College</span>
+                </div>
+                <div class="date">
+                    <span property="cv:endDate" content="2014" datatype="xsd:date">2014</span>
+                </div>
+                <p><strong>GPA:</strong> <span property="cv:gpa" datatype="xsd:decimal">5.00</span> out of 5.00</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <h2>ACHIEVEMENTS</h2>
+        
+        <div rel="cv:hasAchievement">
+            <div about="http://example.org/cv-data#ExcellenceCard" typeof="cv:Achievement" class="achievement">
+                <strong property="cv:achievementName">Excellence Card</strong><br/>
+                <span property="cv:description">Awarded an Excellence Card in recognition of dedication and hard work</span>
+            </div>
+        </div>
+
+        <div rel="cv:hasAchievement">
+            <div about="http://example.org/cv-data#NEXTChampions" typeof="cv:Achievement" class="achievement">
+                <strong property="cv:achievementName">NEXT Champions League</strong><br/>
+                <span property="cv:description">One of the winners of the in-house Forex Trading Champion League (Season 9)</span>
+            </div>
+        </div>
+
+        <div rel="cv:hasAchievement">
+            <div about="http://example.org/cv-data#AcademicScholarship" typeof="cv:Achievement" class="achievement">
+                <strong property="cv:achievementName">Academic Scholarship</strong><br/>
+                <span property="cv:description">Achieved academic scholarship three times for excellent results during B.Sc.</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>SKILLS</h2>
+        
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Interpersonal Skills</h3>
+                <ul class="skill-list">
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#DataAnalysisSkill" typeof="cv:Skill" property="cv:skillName">Data Analysis</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#QualityControlSkill" typeof="cv:Skill" property="cv:skillName">Quality Control</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#CostManagementSkill" typeof="cv:Skill" property="cv:skillName">Cost Management</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#TeamPlayerSkill" typeof="cv:Skill" property="cv:skillName">Team Player</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#CustomerServiceSkill" typeof="cv:Skill" property="cv:skillName">Customer Service</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#EmotionalIntelligenceSkill" typeof="cv:Skill" property="cv:skillName">Emotional Intelligence</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#ProblemSolvingSkill" typeof="cv:Skill" property="cv:skillName">Problem Solving</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <ul class="skill-list">
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#CSkill" typeof="cv:Skill" property="cv:skillName">C</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#CSharpSkill" typeof="cv:Skill" property="cv:skillName">C#</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#CSS3Skill" typeof="cv:Skill" property="cv:skillName">CSS3</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#JavaSkill" typeof="cv:Skill" property="cv:skillName">Java</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#JavaScriptSkill" typeof="cv:Skill" property="cv:skillName">JavaScript</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#PythonSkill" typeof="cv:Skill" property="cv:skillName">Python</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#HTML5Skill" typeof="cv:Skill" property="cv:skillName">HTML5</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#PHPSkill" typeof="cv:Skill" property="cv:skillName">PHP</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Technical Skills</h3>
+                <ul class="skill-list">
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#MySQLSkill" typeof="cv:Skill" property="cv:skillName">MySQL</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#OracleSkill" typeof="cv:Skill" property="cv:skillName">Oracle</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#VSCodeSkill" typeof="cv:Skill" property="cv:skillName">Visual Studio Code</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#PyCharmSkill" typeof="cv:Skill" property="cv:skillName">PyCharm</span>
+                    </li>
+                    <li rel="cv:hasSkill">
+                        <span about="http://example.org/cv-data#GitSkill" typeof="cv:Skill" property="cv:skillName">Git</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>

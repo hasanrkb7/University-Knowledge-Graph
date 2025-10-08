@@ -1,0 +1,297 @@
+{
+  "@context": {
+    "cv": "http://example.org/cv-ontology#",
+    "cvd": "http://example.org/cv-data#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Person": "cv:Person",
+    "WorkExperience": "cv:WorkExperience",
+    "Education": "cv:Education",
+    "Achievement": "cv:Achievement",
+    "Skill": "cv:Skill",
+    "Organization": "cv:Organization",
+    "fullName": "cv:fullName",
+    "email": "cv:email",
+    "phoneNumber": "cv:phoneNumber",
+    "location": "cv:location",
+    "homepage": {"@id": "foaf:homepage", "@type": "@id"},
+    "linkedInProfile": {"@id": "foaf:linkedInProfile", "@type": "@id"},
+    "github": {"@id": "foaf:github", "@type": "@id"},
+    "hasWorkExperience": {"@id": "cv:hasWorkExperience", "@type": "@id"},
+    "hasEducation": {"@id": "cv:hasEducation", "@type": "@id"},
+    "hasAchievement": {"@id": "cv:hasAchievement", "@type": "@id"},
+    "hasSkill": {"@id": "cv:hasSkill", "@type": "@id"},
+    "workedAt": {"@id": "cv:workedAt", "@type": "@id"},
+    "studiedAt": {"@id": "cv:studiedAt", "@type": "@id"},
+    "jobTitle": "cv:jobTitle",
+    "startDate": {"@id": "cv:startDate", "@type": "xsd:date"},
+    "endDate": {"@id": "cv:endDate", "@type": "xsd:date"},
+    "description": "cv:description",
+    "degree": "cv:degree",
+    "cgpa": {"@id": "cv:cgpa", "@type": "xsd:decimal"},
+    "gpa": {"@id": "cv:gpa", "@type": "xsd:decimal"},
+    "achievementName": "cv:achievementName",
+    "skillName": "cv:skillName",
+    "organizationName": "cv:organizationName"
+  },
+  "@graph": [
+    {
+      "@id": "cvd:RakibulHasanRemon",
+      "@type": "Person",
+      "fullName": "Rakibul Hasan Remon",
+      "email": "remon@example.com",
+      "phoneNumber": "+880-XXXXXXXXXX",
+      "location": "Dhaka - 1219, Bangladesh",
+      "homepage": "http://rakibul-hasan-remon/",
+      "linkedInProfile": "https://www.linkedin.com/in/rakibul-hasan-remon/",
+      "github": "https://github.com/hasanrkb7",
+      "hasWorkExperience": [
+        "cvd:NextVenturesJob",
+        "cvd:XAgencyJob"
+      ],
+      "hasEducation": [
+        "cvd:MScAI",
+        "cvd:BScCSE",
+        "cvd:HSC",
+        "cvd:SSC"
+      ],
+      "hasAchievement": [
+        "cvd:ExcellenceCard",
+        "cvd:NEXTChampions",
+        "cvd:AcademicScholarship"
+      ],
+      "hasSkill": [
+        "cvd:DataAnalysisSkill",
+        "cvd:QualityControlSkill",
+        "cvd:CostManagementSkill",
+        "cvd:TeamPlayerSkill",
+        "cvd:CustomerServiceSkill",
+        "cvd:EmotionalIntelligenceSkill",
+        "cvd:ProblemSolvingSkill",
+        "cvd:CSkill",
+        "cvd:CSharpSkill",
+        "cvd:CSS3Skill",
+        "cvd:JavaSkill",
+        "cvd:JavaScriptSkill",
+        "cvd:PythonSkill",
+        "cvd:HTML5Skill",
+        "cvd:PHPSkill",
+        "cvd:MySQLSkill",
+        "cvd:OracleSkill",
+        "cvd:VSCodeSkill",
+        "cvd:PyCharmSkill",
+        "cvd:GitSkill"
+      ]
+    },
+    {
+      "@id": "cvd:NextVenturesJob",
+      "@type": "WorkExperience",
+      "jobTitle": "Executive, Client Experience",
+      "workedAt": "cvd:NextVentures",
+      "startDate": "2023-11",
+      "location": "Pragati Sharani, Dhaka",
+      "description": "Lead efforts to optimize client support through AI tools, ensuring efficient, accurate, and seamless client interactions. Design and implement data-driven performance tracking systems. Mentor teams and provide constructive feedback."
+    },
+    {
+      "@id": "cvd:XAgencyJob",
+      "@type": "WorkExperience",
+      "jobTitle": "Junior Engagement Officer",
+      "workedAt": "cvd:XAgency",
+      "startDate": "2022-02",
+      "endDate": "2023-10",
+      "location": "Mohakhali DOHS, Dhaka",
+      "description": "Collaborate with the team to design and implement software solutions tailored for corporate customer support. Develop and integrate data-driven automation and AI technologies, including a virtual chatbot. Build an Omni-Channel Support platform."
+    },
+    {
+      "@id": "cvd:NextVentures",
+      "@type": "Organization",
+      "organizationName": "Next Ventures",
+      "location": "Pragati Sharani, Dhaka"
+    },
+    {
+      "@id": "cvd:XAgency",
+      "@type": "Organization",
+      "organizationName": "X - Integrated Marketing Agency",
+      "location": "Mohakhali DOHS, Dhaka"
+    },
+    {
+      "@id": "cvd:MScAI",
+      "@type": "Education",
+      "degree": "M.Sc. in Artificial Intelligence",
+      "studiedAt": "cvd:UniversityJyvaskyla",
+      "startDate": "2025-09",
+      "location": "Jyväskylän, Finland"
+    },
+    {
+      "@id": "cvd:BScCSE",
+      "@type": "Education",
+      "degree": "B.Sc. in Computer Science and Engineering",
+      "studiedAt": "cvd:BracUniversity",
+      "startDate": "2018-09",
+      "endDate": "2022-10",
+      "cgpa": 3.44,
+      "description": "CGPA: 3.44 out of 4.00"
+    },
+    {
+      "@id": "cvd:HSC",
+      "@type": "Education",
+      "degree": "Higher Secondary Certificate",
+      "studiedAt": "cvd:DhakaCityCollege",
+      "endDate": "2016",
+      "gpa": 5.00,
+      "description": "GPA: 5.00 out of 5.00"
+    },
+    {
+      "@id": "cvd:SSC",
+      "@type": "Education",
+      "degree": "Secondary School Certificate",
+      "studiedAt": "cvd:IdealSchool",
+      "endDate": "2014",
+      "gpa": 5.00,
+      "description": "GPA: 5.00 out of 5.00"
+    },
+    {
+      "@id": "cvd:UniversityJyvaskyla",
+      "@type": "Organization",
+      "organizationName": "University of Jyväskylä",
+      "location": "Jyväskylän, Finland"
+    },
+    {
+      "@id": "cvd:BracUniversity",
+      "@type": "Organization",
+      "organizationName": "Brac University",
+      "location": "Dhaka, Bangladesh"
+    },
+    {
+      "@id": "cvd:DhakaCityCollege",
+      "@type": "Organization",
+      "organizationName": "Dhaka City College",
+      "location": "Dhaka, Bangladesh"
+    },
+    {
+      "@id": "cvd:IdealSchool",
+      "@type": "Organization",
+      "organizationName": "Ideal School and College",
+      "location": "Dhaka, Bangladesh"
+    },
+    {
+      "@id": "cvd:ExcellenceCard",
+      "@type": "Achievement",
+      "achievementName": "Excellence Card",
+      "description": "Awarded an Excellence Card in recognition of dedication and hard work"
+    },
+    {
+      "@id": "cvd:NEXTChampions",
+      "@type": "Achievement",
+      "achievementName": "NEXT Champions League",
+      "description": "One of the winners of the in-house Forex Trading Champion League (Season 9)"
+    },
+    {
+      "@id": "cvd:AcademicScholarship",
+      "@type": "Achievement",
+      "achievementName": "Academic Scholarship",
+      "description": "Achieved academic scholarship three times for excellent results during B.Sc."
+    },
+    {
+      "@id": "cvd:DataAnalysisSkill",
+      "@type": "Skill",
+      "skillName": "Data Analysis"
+    },
+    {
+      "@id": "cvd:QualityControlSkill",
+      "@type": "Skill",
+      "skillName": "Quality Control"
+    },
+    {
+      "@id": "cvd:CostManagementSkill",
+      "@type": "Skill",
+      "skillName": "Cost Management"
+    },
+    {
+      "@id": "cvd:TeamPlayerSkill",
+      "@type": "Skill",
+      "skillName": "Team Player"
+    },
+    {
+      "@id": "cvd:CustomerServiceSkill",
+      "@type": "Skill",
+      "skillName": "Customer Service"
+    },
+    {
+      "@id": "cvd:EmotionalIntelligenceSkill",
+      "@type": "Skill",
+      "skillName": "Emotional Intelligence"
+    },
+    {
+      "@id": "cvd:ProblemSolvingSkill",
+      "@type": "Skill",
+      "skillName": "Problem Solving"
+    },
+    {
+      "@id": "cvd:CSkill",
+      "@type": "Skill",
+      "skillName": "C"
+    },
+    {
+      "@id": "cvd:CSharpSkill",
+      "@type": "Skill",
+      "skillName": "C#"
+    },
+    {
+      "@id": "cvd:CSS3Skill",
+      "@type": "Skill",
+      "skillName": "CSS3"
+    },
+    {
+      "@id": "cvd:JavaSkill",
+      "@type": "Skill",
+      "skillName": "Java"
+    },
+    {
+      "@id": "cvd:JavaScriptSkill",
+      "@type": "Skill",
+      "skillName": "JavaScript"
+    },
+    {
+      "@id": "cvd:PythonSkill",
+      "@type": "Skill",
+      "skillName": "Python"
+    },
+    {
+      "@id": "cvd:HTML5Skill",
+      "@type": "Skill",
+      "skillName": "HTML5"
+    },
+    {
+      "@id": "cvd:PHPSkill",
+      "@type": "Skill",
+      "skillName": "PHP"
+    },
+    {
+      "@id": "cvd:MySQLSkill",
+      "@type": "Skill",
+      "skillName": "MySQL"
+    },
+    {
+      "@id": "cvd:OracleSkill",
+      "@type": "Skill",
+      "skillName": "Oracle"
+    },
+    {
+      "@id": "cvd:VSCodeSkill",
+      "@type": "Skill",
+      "skillName": "Visual Studio Code"
+    },
+    {
+      "@id": "cvd:PyCharmSkill",
+      "@type": "Skill",
+      "skillName": "PyCharm"
+    },
+    {
+      "@id": "cvd:GitSkill",
+      "@type": "Skill",
+      "skillName": "Git"
+    }
+  ]
+}
