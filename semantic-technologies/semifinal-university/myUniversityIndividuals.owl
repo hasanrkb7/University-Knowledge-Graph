@@ -1,0 +1,525 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://users.jyu.fi/~rhremon/universityOntology.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://users.jyu.fi/~rhremon/universityOntology.owl"
+     versionIRI="https://users.jyu.fi/~rhremon/universityOntology.owl/1.0">
+    <Prefix name="" IRI="http://www.semanticweb.org/hasan/ontologies/2025/9/untitled-ontology-19/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Assignment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Building"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClassRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Course"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Department"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Document"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Enrollment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Exam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Faculty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Grade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Instructor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Laboratory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Lecture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NonTeachingStaff"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Project"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Publication"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resource"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Semester"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Student"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TeachingFaculty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UniversityMember"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#attendedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belongsTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#enrolledIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrerequisite"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#locatedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#supervisedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#teaches"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCapacity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCode"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasCredits"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEmail"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasGPA"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPhoneNumber"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GradeA"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GradeB"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GradeC"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GradeD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#GradeF"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#building_agora"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#classroom_ag_c233"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#course_algorithms"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#course_data_structures"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#course_ties4520"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#department_computer_science"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#enrollment_001"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#instructor_dr_williams"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#instructor_prof_johnson"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#student_alice_brown"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#student_jane_smith"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#student_john_doe"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Grade"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#GradeA"/>
+            <NamedIndividual IRI="#GradeB"/>
+            <NamedIndividual IRI="#GradeC"/>
+            <NamedIndividual IRI="#GradeD"/>
+            <NamedIndividual IRI="#GradeF"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#NonTeachingStaff"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Person"/>
+            <ObjectComplementOf>
+                <Class IRI="#Instructor"/>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TeachingFaculty"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Faculty"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#teaches"/>
+                <Class IRI="#Course"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#UniversityMember"/>
+        <ObjectUnionOf>
+            <Class IRI="#Faculty"/>
+            <Class IRI="#Instructor"/>
+            <Class IRI="#Student"/>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Course"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#teaches"/>
+            <Class IRI="#Instructor"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Student"/>
+        <DataSomeValuesFrom>
+            <DataProperty IRI="#hasGPA"/>
+            <Datatype abbreviatedIRI="xsd:double"/>
+        </DataSomeValuesFrom>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Grade"/>
+        <NamedIndividual IRI="#GradeA"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grade"/>
+        <NamedIndividual IRI="#GradeB"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grade"/>
+        <NamedIndividual IRI="#GradeC"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grade"/>
+        <NamedIndividual IRI="#GradeD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Grade"/>
+        <NamedIndividual IRI="#GradeF"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Building"/>
+        <NamedIndividual IRI="#building_agora"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#ClassRoom"/>
+        <NamedIndividual IRI="#classroom_ag_c233"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Course"/>
+        <NamedIndividual IRI="#course_algorithms"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Course"/>
+        <NamedIndividual IRI="#course_data_structures"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Course"/>
+        <NamedIndividual IRI="#course_ties4520"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Department"/>
+        <NamedIndividual IRI="#department_computer_science"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Enrollment"/>
+        <NamedIndividual IRI="#enrollment_001"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Instructor"/>
+        <NamedIndividual IRI="#instructor_dr_williams"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Instructor"/>
+        <NamedIndividual IRI="#instructor_prof_johnson"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Student"/>
+        <NamedIndividual IRI="#student_alice_brown"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Student"/>
+        <NamedIndividual IRI="#student_jane_smith"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Student"/>
+        <NamedIndividual IRI="#student_john_doe"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#locatedIn"/>
+        <NamedIndividual IRI="#classroom_ag_c233"/>
+        <NamedIndividual IRI="#building_agora"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsTo"/>
+        <NamedIndividual IRI="#course_algorithms"/>
+        <NamedIndividual IRI="#department_computer_science"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsTo"/>
+        <NamedIndividual IRI="#course_data_structures"/>
+        <NamedIndividual IRI="#department_computer_science"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#belongsTo"/>
+        <NamedIndividual IRI="#course_ties4520"/>
+        <NamedIndividual IRI="#department_computer_science"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#teaches"/>
+        <NamedIndividual IRI="#instructor_dr_williams"/>
+        <NamedIndividual IRI="#course_ties4520"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#teaches"/>
+        <NamedIndividual IRI="#instructor_prof_johnson"/>
+        <NamedIndividual IRI="#course_algorithms"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#teaches"/>
+        <NamedIndividual IRI="#instructor_prof_johnson"/>
+        <NamedIndividual IRI="#course_data_structures"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#enrolledIn"/>
+        <NamedIndividual IRI="#student_alice_brown"/>
+        <NamedIndividual IRI="#course_algorithms"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#enrolledIn"/>
+        <NamedIndividual IRI="#student_alice_brown"/>
+        <NamedIndividual IRI="#course_data_structures"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#enrolledIn"/>
+        <NamedIndividual IRI="#student_jane_smith"/>
+        <NamedIndividual IRI="#course_algorithms"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#enrolledIn"/>
+        <NamedIndividual IRI="#student_jane_smith"/>
+        <NamedIndividual IRI="#course_ties4520"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#enrolledIn"/>
+        <NamedIndividual IRI="#student_john_doe"/>
+        <NamedIndividual IRI="#course_data_structures"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#enrolledIn"/>
+        <NamedIndividual IRI="#student_john_doe"/>
+        <NamedIndividual IRI="#course_ties4520"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#building_agora"/>
+        <Literal>Agora Building</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCapacity"/>
+        <NamedIndividual IRI="#classroom_ag_c233"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">50</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#classroom_ag_c233"/>
+        <Literal>Agora C233</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCode"/>
+        <NamedIndividual IRI="#course_algorithms"/>
+        <Literal>TIES3110</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCredits"/>
+        <NamedIndividual IRI="#course_algorithms"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#course_algorithms"/>
+        <Literal>Advanced Algorithms</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCode"/>
+        <NamedIndividual IRI="#course_data_structures"/>
+        <Literal>TIES2110</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCredits"/>
+        <NamedIndividual IRI="#course_data_structures"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#course_data_structures"/>
+        <Literal>Data Structures and Algorithms</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCode"/>
+        <NamedIndividual IRI="#course_ties4520"/>
+        <Literal>TIES4520</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasCredits"/>
+        <NamedIndividual IRI="#course_ties4520"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#course_ties4520"/>
+        <Literal>Semantic Technologies for Developers</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#department_computer_science"/>
+        <Literal>Department of Computer Science</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasEmail"/>
+        <NamedIndividual IRI="#instructor_dr_williams"/>
+        <Literal>m.williams@jyu.fi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#instructor_dr_williams"/>
+        <Literal>Dr. Michael Williams</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPhoneNumber"/>
+        <NamedIndividual IRI="#instructor_dr_williams"/>
+        <Literal>+358-40-1234567</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasEmail"/>
+        <NamedIndividual IRI="#instructor_prof_johnson"/>
+        <Literal>s.johnson@jyu.fi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#instructor_prof_johnson"/>
+        <Literal>Prof. Sarah Johnson</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasPhoneNumber"/>
+        <NamedIndividual IRI="#instructor_prof_johnson"/>
+        <Literal>+358-40-7654321</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasEmail"/>
+        <NamedIndividual IRI="#student_alice_brown"/>
+        <Literal>alice.brown@jyu.fi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasGPA"/>
+        <NamedIndividual IRI="#student_alice_brown"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">3.2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#student_alice_brown"/>
+        <Literal>Alice Brown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasEmail"/>
+        <NamedIndividual IRI="#student_jane_smith"/>
+        <Literal>jane.smith@jyu.fi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasGPA"/>
+        <NamedIndividual IRI="#student_jane_smith"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">3.8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#student_jane_smith"/>
+        <Literal>Jane Smith</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasEmail"/>
+        <NamedIndividual IRI="#student_john_doe"/>
+        <Literal>john.doe@jyu.fi</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasGPA"/>
+        <NamedIndividual IRI="#student_john_doe"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#double">3.5</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#student_john_doe"/>
+        <Literal>John Doe</Literal>
+    </DataPropertyAssertion>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#supervisedBy"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#enrolledIn"/>
+    </InverseFunctionalObjectProperty>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsTo"/>
+        <Class IRI="#Department"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#enrolledIn"/>
+        <Class IRI="#Course"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#teaches"/>
+        <Class IRI="#Course"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

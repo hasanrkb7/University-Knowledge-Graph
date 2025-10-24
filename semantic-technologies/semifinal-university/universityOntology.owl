@@ -1,0 +1,392 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/hasan/ontologies/2025/9/untitled-ontology-19/"
+     xml:base="http://www.semanticweb.org/hasan/ontologies/2025/9/untitled-ontology-19/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl">
+        <owl:versionIRI rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl/1.0"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#attendedBy -->
+
+    <owl:ObjectProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#attendedBy"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#belongsTo">
+        <rdfs:range rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#Department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#enrolledIn -->
+
+    <owl:ObjectProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#enrolledIn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#hasPrerequisite -->
+
+    <owl:ObjectProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#hasPrerequisite"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#locatedIn"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#supervisedBy -->
+
+    <owl:ObjectProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#supervisedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#teaches -->
+
+    <owl:ObjectProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#teaches">
+        <rdfs:range rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#hasCapacity -->
+
+    <owl:DatatypeProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#hasCapacity"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#hasCode -->
+
+    <owl:DatatypeProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#hasCode"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#hasCredits -->
+
+    <owl:DatatypeProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#hasCredits"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#hasEmail -->
+
+    <owl:DatatypeProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#hasEmail"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#hasGPA -->
+
+    <owl:DatatypeProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#hasGPA"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#hasName -->
+
+    <owl:DatatypeProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#hasName"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#hasPhoneNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#hasPhoneNumber"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Assignment -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Assignment"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Building -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Building"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#ClassRoom -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#ClassRoom"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Course -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Course">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#teaches"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#Instructor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Department -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Department"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Document -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Document"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Enrollment -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Enrollment"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Event -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Event"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Exam -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Exam"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Faculty -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Faculty"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Grade -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Grade">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#GradeA"/>
+                    <rdf:Description rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#GradeB"/>
+                    <rdf:Description rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#GradeC"/>
+                    <rdf:Description rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#GradeD"/>
+                    <rdf:Description rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#GradeF"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Instructor -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Instructor"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Laboratory -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Laboratory"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Lecture -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Lecture"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#NonTeachingStaff -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#NonTeachingStaff">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Person"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#Instructor"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Person -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Person"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Project -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Project"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Publication -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Publication"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Resource -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Resource"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Semester -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Semester"/>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#Student -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Student">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#hasGPA"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#TeachingFaculty -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#TeachingFaculty">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Faculty"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#teaches"/>
+                        <owl:someValuesFrom rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#Course"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#UniversityMember -->
+
+    <owl:Class rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#UniversityMember">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Faculty"/>
+                    <rdf:Description rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Instructor"/>
+                    <rdf:Description rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#Student"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#GradeA -->
+
+    <owl:NamedIndividual rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#GradeA">
+        <rdf:type rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#Grade"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#GradeB -->
+
+    <owl:NamedIndividual rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#GradeB">
+        <rdf:type rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#Grade"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#GradeC -->
+
+    <owl:NamedIndividual rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#GradeC">
+        <rdf:type rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#Grade"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#GradeD -->
+
+    <owl:NamedIndividual rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#GradeD">
+        <rdf:type rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#Grade"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://users.jyu.fi/~rhremon/universityOntology.owl#GradeF -->
+
+    <owl:NamedIndividual rdf:about="https://users.jyu.fi/~rhremon/universityOntology.owl#GradeF">
+        <rdf:type rdf:resource="https://users.jyu.fi/~rhremon/universityOntology.owl#Grade"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

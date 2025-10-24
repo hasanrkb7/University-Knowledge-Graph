@@ -1,0 +1,345 @@
+@prefix : <http://www.semanticweb.org/hasan/ontologies/2025/9/untitled-ontology-19/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/hasan/ontologies/2025/9/untitled-ontology-19/> .
+
+<https://users.jyu.fi/~rhremon/universityOntology.owl> rdf:type owl:Ontology ;
+                                                        owl:versionIRI <https://users.jyu.fi/~rhremon/universityOntology.owl/1.0> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#attendedBy
+:attendedBy rdf:type owl:ObjectProperty .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#belongsTo
+:belongsTo rdf:type owl:ObjectProperty ;
+           rdfs:range :Department .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#enrolledIn
+:enrolledIn rdf:type owl:ObjectProperty ,
+                     owl:InverseFunctionalProperty ;
+            rdfs:range :Course .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#hasPrerequisite
+:hasPrerequisite rdf:type owl:ObjectProperty .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#locatedIn
+:locatedIn rdf:type owl:ObjectProperty .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#supervisedBy
+:supervisedBy rdf:type owl:ObjectProperty ,
+                       owl:FunctionalProperty .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#teaches
+:teaches rdf:type owl:ObjectProperty ;
+         rdfs:range :Course .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#hasCapacity
+:hasCapacity rdf:type owl:DatatypeProperty .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#hasCode
+:hasCode rdf:type owl:DatatypeProperty .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#hasCredits
+:hasCredits rdf:type owl:DatatypeProperty .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#hasEmail
+:hasEmail rdf:type owl:DatatypeProperty .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#hasGPA
+:hasGPA rdf:type owl:DatatypeProperty .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#hasName
+:hasName rdf:type owl:DatatypeProperty .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#hasPhoneNumber
+:hasPhoneNumber rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Assignment
+:Assignment rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Building
+:Building rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#ClassRoom
+:ClassRoom rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Course
+:Course rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :teaches ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Instructor
+                        ] .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Department
+:Department rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Document
+:Document rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Enrollment
+:Enrollment rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Event
+:Event rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Exam
+:Exam rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Faculty
+:Faculty rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Grade
+:Grade rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:oneOf ( :GradeA
+                                         :GradeB
+                                         :GradeC
+                                         :GradeD
+                                         :GradeF
+                                       )
+                           ] .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Instructor
+:Instructor rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Laboratory
+:Laboratory rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Lecture
+:Lecture rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#NonTeachingStaff
+:NonTeachingStaff rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( :Person
+                                                             [ rdf:type owl:Class ;
+                                                               owl:complementOf :Instructor
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Person
+:Person rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Project
+:Project rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Publication
+:Publication rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Resource
+:Resource rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Semester
+:Semester rdf:type owl:Class .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#Student
+:Student rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasGPA ;
+                           owl:someValuesFrom xsd:double
+                         ] .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#TeachingFaculty
+:TeachingFaculty rdf:type owl:Class ;
+                 owl:equivalentClass [ owl:intersectionOf ( :Faculty
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty :teaches ;
+                                                              owl:someValuesFrom :Course
+                                                            ]
+                                                          ) ;
+                                       rdf:type owl:Class
+                                     ] .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#UniversityMember
+:UniversityMember rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:unionOf ( :Faculty
+                                                      :Instructor
+                                                      :Student
+                                                    )
+                                      ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#GradeA
+:GradeA rdf:type owl:NamedIndividual ,
+                 :Grade .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#GradeB
+:GradeB rdf:type owl:NamedIndividual ,
+                 :Grade .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#GradeC
+:GradeC rdf:type owl:NamedIndividual ,
+                 :Grade .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#GradeD
+:GradeD rdf:type owl:NamedIndividual ,
+                 :Grade .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#GradeF
+:GradeF rdf:type owl:NamedIndividual ,
+                 :Grade .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#building_agora
+:building_agora rdf:type owl:NamedIndividual ,
+                         :Building ;
+                :hasName "Agora Building" .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#classroom_ag_c233
+:classroom_ag_c233 rdf:type owl:NamedIndividual ,
+                            :ClassRoom ;
+                   :locatedIn :building_agora ;
+                   :hasCapacity 50 ;
+                   :hasName "Agora C233" .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#course_algorithms
+:course_algorithms rdf:type owl:NamedIndividual ,
+                            :Course ;
+                   :belongsTo :department_computer_science ;
+                   :hasCode "TIES3110" ;
+                   :hasCredits 5 ;
+                   :hasName "Advanced Algorithms" .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#course_data_structures
+:course_data_structures rdf:type owl:NamedIndividual ,
+                                 :Course ;
+                        :belongsTo :department_computer_science ;
+                        :hasCode "TIES2110" ;
+                        :hasCredits 5 ;
+                        :hasName "Data Structures and Algorithms" .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#course_ties4520
+:course_ties4520 rdf:type owl:NamedIndividual ,
+                          :Course ;
+                 :belongsTo :department_computer_science ;
+                 :hasCode "TIES4520" ;
+                 :hasCredits 5 ;
+                 :hasName "Semantic Technologies for Developers" .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#department_computer_science
+:department_computer_science rdf:type owl:NamedIndividual ,
+                                      :Department ;
+                             :hasName "Department of Computer Science" .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#enrollment_001
+:enrollment_001 rdf:type owl:NamedIndividual ,
+                         :Enrollment .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#instructor_dr_williams
+:instructor_dr_williams rdf:type owl:NamedIndividual ,
+                                 :Instructor ;
+                        :teaches :course_ties4520 ;
+                        :hasEmail "m.williams@jyu.fi" ;
+                        :hasName "Dr. Michael Williams" ;
+                        :hasPhoneNumber "+358-40-1234567" .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#instructor_prof_johnson
+:instructor_prof_johnson rdf:type owl:NamedIndividual ,
+                                  :Instructor ;
+                         :teaches :course_algorithms ,
+                                  :course_data_structures ;
+                         :hasEmail "s.johnson@jyu.fi" ;
+                         :hasName "Prof. Sarah Johnson" ;
+                         :hasPhoneNumber "+358-40-7654321" .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#student_alice_brown
+:student_alice_brown rdf:type owl:NamedIndividual ,
+                              :Student ;
+                     :enrolledIn :course_algorithms ,
+                                 :course_data_structures ;
+                     :hasEmail "alice.brown@jyu.fi" ;
+                     :hasGPA "3.2"^^xsd:double ;
+                     :hasName "Alice Brown" .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#student_jane_smith
+:student_jane_smith rdf:type owl:NamedIndividual ,
+                             :Student ;
+                    :enrolledIn :course_algorithms ,
+                                :course_ties4520 ;
+                    :hasEmail "jane.smith@jyu.fi" ;
+                    :hasGPA "3.8"^^xsd:double ;
+                    :hasName "Jane Smith" .
+
+
+###  https://users.jyu.fi/~rhremon/universityOntology.owl#student_john_doe
+:student_john_doe rdf:type owl:NamedIndividual ,
+                           :Student ;
+                  :enrolledIn :course_data_structures ,
+                              :course_ties4520 ;
+                  :hasEmail "john.doe@jyu.fi" ;
+                  :hasGPA "3.5"^^xsd:double ;
+                  :hasName "John Doe" .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
