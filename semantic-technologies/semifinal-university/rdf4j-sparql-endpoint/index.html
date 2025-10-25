@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDF4J SPARQL Endpoint</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>RDF4J SPARQL Endpoint</h1>
+        <p class="subtitle">Query your RDF4J repository with SPARQL</p>
+        
+        <form action="query" method="post">
+            <div class="form-group">
+                <label for="serverURL">RDF4J Server URL:</label>
+                <input type="text" 
+                       id="serverURL" 
+                       name="serverURL" 
+                       value="http://localhost:8080/rdf4j-server" 
+                       required>
+                <span class="hint">Default: http://localhost:8080/rdf4j-server</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="repositoryID">Repository ID:</label>
+                <input type="text" 
+                       id="repositoryID" 
+                       name="repositoryID" 
+                       value="ties4520" 
+                       required>
+                <span class="hint">Example: ties4520</span>
+            </div>
+            
+            <div class="form-group">
+                <label for="sparqlQuery">SPARQL Query:</label>
+                <textarea id="sparqlQuery" 
+                          name="sparqlQuery" 
+                          rows="12" 
+                          required
+                          placeholder="Enter your SPARQL query here...&#10;&#10;Example:&#10;PREFIX onto: <http://www.semanticweb.org/hasan/ontologies/2025/9/untitled-ontology-19/>&#10;&#10;SELECT ?student ?name ?email&#10;WHERE {&#10;  ?student a onto:Student ;&#10;           onto:hasName ?name ;&#10;           onto:hasEmail ?email .&#10;}"></textarea>
+                <span class="hint">Supported: SELECT, CONSTRUCT, DESCRIBE, ASK</span>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="btn-primary">Execute Query</button>
+                <button type="reset" class="btn-secondary">Clear Form</button>
+            </div>
+        </form>
+        
+        <div class="info-box">
+            <h3>Quick Examples:</h3>
+            <div class="example">
+                <strong>SELECT Query:</strong>
+                <code>
+PREFIX onto: &lt;http://www.semanticweb.org/hasan/ontologies/2025/9/untitled-ontology-19/&gt;
+SELECT ?student ?name WHERE {
+  ?student a onto:Student ;
+           onto:hasName ?name .
+}
+                </code>
+            </div>
+            
+            <div class="example">
+                <strong>ASK Query:</strong>
+                <code>
+PREFIX onto: &lt;http://www.semanticweb.org/hasan/ontologies/2025/9/untitled-ontology-19/&gt;
+ASK {
+  ?student a onto:Student .
+}
+                </code>
+            </div>
+            
+            <div class="example">
+                <strong>CONSTRUCT Query:</strong>
+                <code>
+PREFIX onto: &lt;http://www.semanticweb.org/hasan/ontologies/2025/9/untitled-ontology-19/&gt;
+CONSTRUCT { ?student onto:hasName ?name }
+WHERE {
+  ?student a onto:Student ;
+           onto:hasName ?name .
+}
+                </code>
+            </div>
+        </div>
+        
+        <footer>
+            <p>TIES4520 Semi-Final Assignment - Task F7</p>
+            <p>Student: Hasan (rhremon)</p>
+        </footer>
+    </div>
+</body>
+</html>

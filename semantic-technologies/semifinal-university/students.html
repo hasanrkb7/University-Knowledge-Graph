@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Jyväskylä - Computer Science Department</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        section {
+            margin-bottom: 50px;
+        }
+        
+        section h2 {
+            color: #2a5298;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .card h3 {
+            color: #1e3c72;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .card p {
+            margin: 8px 0;
+            color: #555;
+        }
+        
+        .card strong {
+            color: #2a5298;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #667eea;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        .gpa-high {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .gpa-medium {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        
+        .gpa-low {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        footer {
+            background: #2a5298;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .metadata {
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>University of Jyväskylä</h1>
+            <p>Department of Computer Science - Student & Course Information</p>
+        </header>
+        
+        <div class="content">
+            <!-- Students Section -->
+            <section id="students">
+                <h2>Students</h2>
+                
+                <!-- Student 1: John Doe -->
+                <div class="card">
+                    <h3>John Doe</h3>
+                    <p><strong>Email:</strong> john.doe@jyu.fi</p>
+                    <p><strong>GPA:</strong> <span class="gpa-medium">3.5</span></p>
+                    <div class="metadata">
+                        <p><strong>Enrolled Courses:</strong></p>
+                        <span class="badge">TIES4520 - Semantic Technologies</span>
+                        <span class="badge">TIES2110 - Data Structures</span>
+                    </div>
+                </div>
+                
+                <!-- Student 2: Jane Smith -->
+                <div class="card">
+                    <h3>Jane Smith</h3>
+                    <p><strong>Email:</strong> jane.smith@jyu.fi</p>
+                    <p><strong>GPA:</strong> <span class="gpa-high">3.8</span></p>
+                    <div class="metadata">
+                        <p><strong>Enrolled Courses:</strong></p>
+                        <span class="badge">TIES4520 - Semantic Technologies</span>
+                        <span class="badge">TIES2110 - Data Structures</span>
+                        <span class="badge">TIES3110 - Advanced Algorithms</span>
+                    </div>
+                </div>
+                
+                <!-- Student 3: Alice Brown -->
+                <div class="card">
+                    <h3>Alice Brown</h3>
+                    <p><strong>Email:</strong> alice.brown@jyu.fi</p>
+                    <p><strong>GPA:</strong> <span class="gpa-low">3.2</span></p>
+                    <div class="metadata">
+                        <p><strong>Enrolled Courses:</strong></p>
+                        <span class="badge">TIES4520 - Semantic Technologies</span>
+                        <span class="badge">TIES2110 - Data Structures</span>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Courses Section -->
+            <section id="courses">
+                <h2>Courses</h2>
+                
+                <!-- Course 1: TIES4520 -->
+                <div class="card">
+                    <h3>Semantic Technologies for Developers</h3>
+                    <p><strong>Course Code:</strong> TIES4520</p>
+                    <p><strong>Credits:</strong> 5 ECTS</p>
+                    <p><strong>Department:</strong> Computer Science</p>
+                    <div class="metadata">
+                        <p><em>Instructor: Dr. Michael Williams</em></p>
+                    </div>
+                </div>
+                
+                <!-- Course 2: Data Structures -->
+                <div class="card">
+                    <h3>Data Structures and Algorithms</h3>
+                    <p><strong>Course Code:</strong> TIES2110</p>
+                    <p><strong>Credits:</strong> 5 ECTS</p>
+                    <p><strong>Department:</strong> Computer Science</p>
+                    <div class="metadata">
+                        <p><em>Instructor: Prof. Sarah Johnson</em></p>
+                    </div>
+                </div>
+                
+                <!-- Course 3: Advanced Algorithms -->
+                <div class="card">
+                    <h3>Advanced Algorithms</h3>
+                    <p><strong>Course Code:</strong> TIES3110</p>
+                    <p><strong>Credits:</strong> 5 ECTS</p>
+                    <p><strong>Department:</strong> Computer Science</p>
+                    <p><strong>Prerequisite:</strong> TIES2110</p>
+                    <div class="metadata">
+                        <p><em>Instructor: Prof. Sarah Johnson</em></p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Instructors Section -->
+            <section id="instructors">
+                <h2>Instructors</h2>
+                
+                <!-- Instructor 1: Dr. Williams -->
+                <div class="card">
+                    <h3>Dr. Michael Williams</h3>
+                    <p><strong>Email:</strong> m.williams@jyu.fi</p>
+                    <p><strong>Phone:</strong> +358-40-1234567</p>
+                    <div class="metadata">
+                        <p><strong>Teaching:</strong> TIES4520</p>
+                        <p><strong>Supervised By:</strong> Prof. Sarah Johnson</p>
+                    </div>
+                </div>
+                
+                <!-- Instructor 2: Prof. Johnson -->
+                <div class="card">
+                    <h3>Prof. Sarah Johnson</h3>
+                    <p><strong>Email:</strong> s.johnson@jyu.fi</p>
+                    <p><strong>Phone:</strong> +358-40-7654321</p>
+                    <div class="metadata">
+                        <p><strong>Teaching:</strong> TIES2110, TIES3110</p>
+                    </div>
+                </div>
+                
+                <!-- Instructor 3: Dr. Anderson -->
+                <div class="card">
+                    <h3>Dr. Robert Anderson</h3>
+                    <p><strong>Email:</strong> r.anderson@jyu.fi</p>
+                    <p><strong>Phone:</strong> +358-40-9876543</p>
+                    <div class="metadata">
+                        <p><strong>Supervised By:</strong> Dr. Michael Williams</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Department Section -->
+            <section id="department">
+                <h2>Department</h2>
+                
+                <div class="card">
+                    <h3>Department of Computer Science</h3>
+                    <div class="metadata">
+                        <p>The Department of Computer Science offers comprehensive programs in various areas of computing,
+                        including semantic technologies, algorithms, data structures, and software engineering.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>&copy; 2025 University of Jyväskylä - Department of Computer Science</p>
+            <p>TIES4520 Semi-Final Assignment - Student: Hasan (rhremon)</p>
+        </footer>
+    </div>
+</body>
+</html>

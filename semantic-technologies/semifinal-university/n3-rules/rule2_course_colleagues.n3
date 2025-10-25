@@ -1,0 +1,20 @@
+@prefix : <https://users.jyu.fi/~rhremon/universityOntology.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Rule 2: Course Colleagues
+# If student X is enrolled in course C, and student Y is enrolled in course C,
+# and X is not equal to Y, then X and Y are course colleagues.
+
+{
+    ?x a :Student .
+    ?y a :Student .
+    ?x :enrolledIn ?course .
+    ?y :enrolledIn ?course .
+    ?x owl:differentFrom ?y .
+}
+=>
+{
+    ?x :hasCourseColleague ?y .
+} .

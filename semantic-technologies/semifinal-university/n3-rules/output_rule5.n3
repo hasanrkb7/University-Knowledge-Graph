@@ -1,0 +1,91 @@
+#Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp 
+        #    using base file:///JYU/Semantic Technologies for Developers/DemoSession/Semi-final/SemiFinal/N3_Rules/
+        
+#  Notation3 generation by
+#       notation3.py,v 1.200 2007/12/11 21:18:08 syosi Exp
+
+#   Base was: file:///JYU/Semantic Technologies for Developers/DemoSession/Semi-final/SemiFinal/N3_Rules/
+     @prefix : <https://users.jyu.fi/~rhremon/universityOntology.owl#> .
+    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+    @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+    
+     @forAll <rule5_prerequisites.n3#course1>,
+                <rule5_prerequisites.n3#course2>,
+                <rule5_prerequisites.n3#student> .
+    
+    :course_algorithms     a :Course;
+         :belongsTo :department_computer_science;
+         :hasCode "TIES3110";
+         :hasCredits "5"^^xsd:int;
+         :hasName "Advanced Algorithms";
+         :hasPrerequisite :course_data_structures .
+    
+    :course_data_structures     a :Course;
+         :belongsTo :department_computer_science;
+         :hasCode "TIES2110";
+         :hasCredits "5"^^xsd:int;
+         :hasName "Data Structures and Algorithms" .
+    
+    :course_ties4520     a :Course;
+         :belongsTo :department_computer_science;
+         :hasCode "TIES4520";
+         :hasCredits "5"^^xsd:int;
+         :hasName "Semantic Technologies for Developers" .
+    
+    :department_computer_science     a :Department;
+         :hasName "Department of Computer Science" .
+    
+    :instructor_dr_anderson     a :Instructor;
+         :hasEmail "r.anderson@jyu.fi";
+         :hasName "Dr. Robert Anderson";
+         :supervisedBy :instructor_dr_williams;
+         :teaches :course_algorithms .
+    
+    :instructor_dr_williams     a :Instructor;
+         :hasEmail "m.williams@jyu.fi";
+         :hasName "Dr. Michael Williams";
+         :supervisedBy :instructor_prof_johnson;
+         :teaches :course_ties4520 .
+    
+    :instructor_prof_johnson     a :Instructor;
+         :hasEmail "s.johnson@jyu.fi";
+         :hasName "Prof. Sarah Johnson";
+         :teaches :course_data_structures .
+    
+    :student_alice_brown     a :Student;
+         owl:differentFrom :student_jane_smith,
+                :student_john_doe;
+         :enrolledIn :course_data_structures,
+                :course_ties4520;
+         :hasEmail "alice.brown@jyu.fi";
+         :hasGPA 3.2e+00;
+         :hasName "Alice Brown" .
+    
+    :student_jane_smith     a :Student;
+         owl:differentFrom :student_alice_brown,
+                :student_john_doe;
+         :enrolledIn :course_algorithms,
+                :course_data_structures,
+                :course_ties4520;
+         :hasEmail "jane.smith@jyu.fi";
+         :hasGPA 3.8e+00;
+         :hasName "Jane Smith";
+         :satisfiesPrerequisitesFor :course_algorithms .
+    
+    :student_john_doe     a :Student;
+         owl:differentFrom :student_alice_brown,
+                :student_jane_smith;
+         :enrolledIn :course_data_structures,
+                :course_ties4520;
+         :hasEmail "john.doe@jyu.fi";
+         :hasGPA 3.5e+00;
+         :hasName "John Doe" .
+    {
+        <rule5_prerequisites.n3#course2>     :hasPrerequisite <rule5_prerequisites.n3#course1> .
+        <rule5_prerequisites.n3#student>     :enrolledIn <rule5_prerequisites.n3#course1>,
+                    <rule5_prerequisites.n3#course2> .
+        
+        }     <http://www.w3.org/2000/10/swap/log#implies> {<rule5_prerequisites.n3#student>     :satisfiesPrerequisitesFor <rule5_prerequisites.n3#course2> .
+        } .
+    
+#ENDS

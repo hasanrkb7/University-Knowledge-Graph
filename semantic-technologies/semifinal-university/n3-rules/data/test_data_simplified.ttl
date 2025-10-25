@@ -1,0 +1,75 @@
+@prefix : <https://users.jyu.fi/~rhremon/universityOntology.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+# Students
+:student_john_doe a :Student ;
+    :hasName "John Doe" ;
+    :hasEmail "john.doe@jyu.fi" ;
+    :hasGPA "3.5"^^xsd:double ;
+    :enrolledIn :course_ties4520 ;
+    :enrolledIn :course_data_structures ;
+    owl:differentFrom :student_jane_smith ;
+    owl:differentFrom :student_alice_brown .
+
+:student_jane_smith a :Student ;
+    :hasName "Jane Smith" ;
+    :hasEmail "jane.smith@jyu.fi" ;
+    :hasGPA "3.8"^^xsd:double ;
+    :enrolledIn :course_ties4520 ;
+    :enrolledIn :course_data_structures ;
+    :enrolledIn :course_algorithms ;
+    owl:differentFrom :student_john_doe ;
+    owl:differentFrom :student_alice_brown .
+
+:student_alice_brown a :Student ;
+    :hasName "Alice Brown" ;
+    :hasEmail "alice.brown@jyu.fi" ;
+    :hasGPA "3.2"^^xsd:double ;
+    :enrolledIn :course_data_structures ;
+    :enrolledIn :course_ties4520 ;
+    owl:differentFrom :student_john_doe ;
+    owl:differentFrom :student_jane_smith .
+
+# Instructors
+:instructor_dr_williams a :Instructor ;
+    :hasName "Dr. Michael Williams" ;
+    :hasEmail "m.williams@jyu.fi" ;
+    :teaches :course_ties4520 ;
+    :supervisedBy :instructor_prof_johnson .
+
+:instructor_prof_johnson a :Instructor ;
+    :hasName "Prof. Sarah Johnson" ;
+    :hasEmail "s.johnson@jyu.fi" ;
+    :teaches :course_data_structures .
+
+:instructor_dr_anderson a :Instructor ;
+    :hasName "Dr. Robert Anderson" ;
+    :hasEmail "r.anderson@jyu.fi" ;
+    :teaches :course_algorithms ;
+    :supervisedBy :instructor_dr_williams .
+
+# Courses
+:course_ties4520 a :Course ;
+    :hasName "Semantic Technologies for Developers" ;
+    :hasCode "TIES4520" ;
+    :hasCredits "5"^^xsd:int ;
+    :belongsTo :department_computer_science .
+
+:course_data_structures a :Course ;
+    :hasName "Data Structures and Algorithms" ;
+    :hasCode "TIES2110" ;
+    :hasCredits "5"^^xsd:int ;
+    :belongsTo :department_computer_science .
+
+:course_algorithms a :Course ;
+    :hasName "Advanced Algorithms" ;
+    :hasCode "TIES3110" ;
+    :hasCredits "5"^^xsd:int ;
+    :hasPrerequisite :course_data_structures ;
+    :belongsTo :department_computer_science .
+
+# Department
+:department_computer_science a :Department ;
+    :hasName "Department of Computer Science" .

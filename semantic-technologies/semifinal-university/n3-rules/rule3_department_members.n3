@@ -1,0 +1,16 @@
+@prefix : <https://users.jyu.fi/~rhremon/universityOntology.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Rule 3: Department Members
+# If person P teaches course C, and course C belongs to department D,
+# then person P is a member of department D.
+
+{
+    ?person :teaches ?course .
+    ?course :belongsTo ?department .
+}
+=>
+{
+    ?person :memberOf ?department .
+} .

@@ -1,0 +1,18 @@
+@prefix : <https://users.jyu.fi/~rhremon/universityOntology.owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Rule 5: Course Prerequisites Satisfaction
+# If student S is enrolled in course C2, and course C2 has prerequisite C1,
+# and student S is enrolled in course C1,
+# then student S satisfies prerequisites for C2.
+
+{
+    ?student :enrolledIn ?course2 .
+    ?course2 :hasPrerequisite ?course1 .
+    ?student :enrolledIn ?course1 .
+}
+=>
+{
+    ?student :satisfiesPrerequisitesFor ?course2 .
+} .
