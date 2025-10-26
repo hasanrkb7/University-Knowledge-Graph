@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jena SPARQL & Rule-Based Reasoning Endpoint</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔬 Jena SPARQL & Rule-Based Reasoning Endpoint</h1>
+        <p class="subtitle">Query RDFa documents with N3 rules and SPARQL</p>
+
+        <form action="JenaRDFaEndpointServlet" method="post">
+            
+            <!-- RDFa URL Input -->
+            <div class="form-group">
+                <label for="rdfaUrl">📄 RDFa Document URL:</label>
+                <input type="text" 
+                       id="rdfaUrl" 
+                       name="rdfaUrl" 
+                       placeholder="https://users.jyu.fi/~olkhriye/universityOntology.ttl"
+                       value="https://users.jyu.fi/~rhremon/universityOntology.ttl"
+                       required>
+                <small>Enter the URL of an RDFa or RDF document</small>
+            </div>
+
+            <!-- N3 Rules Input -->
+            <div class="form-group">
+                <label for="n3Rules">⚙️ N3 Rules (Optional):</label>
+                <textarea id="n3Rules" 
+                          name="n3Rules" 
+                          rows="8" 
+                          placeholder="Enter N3 rules for reasoning (one per line)
+Example:
+[rule1: (?x rdf:type ex:Student) (?x ex:age ?age) greaterThan(?age, 18) -> (?x rdf:type ex:Adult)]"></textarea>
+                <small>Leave empty to query without reasoning</small>
+            </div>
+
+            <!-- SPARQL Query Input -->
+            <div class="form-group">
+                <label for="sparqlQuery">🔍 SPARQL Query:</label>
+                <textarea id="sparqlQuery" 
+                          name="sparqlQuery" 
+                          rows="10" 
+                          required 
+                          placeholder="Enter your SPARQL query">PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?subject ?predicate ?object
+WHERE {
+    ?subject ?predicate ?object .
+}
+LIMIT 10</textarea>
+                <small>Write your SPARQL SELECT query</small>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Execute Query</button>
+                <button type="reset" class="btn btn-secondary">Reset Form</button>
+            </div>
+
+        </form>
+
+        <!-- Example Queries Section -->
+        <div class="examples">
+            <h2>💡 Example Queries</h2>
+            
+            <div class="example-card">
+                <h3>List all students with details</h3>
+                <pre>PREFIX rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;
+SELECT ?student ?name ?email ?gpa
+WHERE {
+    ?student rdf:type :Student .
+    ?student :hasName ?name .
+    ?student :hasEmail ?email .
+    ?student :hasGPA ?gpa .
+}</pre>
+            </div>
+
+            <div class="example-card">
+                <h3>Find courses taught by instructors</h3>
+                <pre>SELECT ?course ?instructor
+WHERE {
+    ?course :teaches ?instructor .
+    ?instructor rdf:type :Instructor .
+}</pre>
+            </div>
+
+            <div class="example-card">
+                <h3>Calculate average GPA</h3>
+                <pre>SELECT (AVG(?gpa) AS ?averageGPA)
+WHERE {
+    ?student :hasGPA ?gpa .
+}</pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
