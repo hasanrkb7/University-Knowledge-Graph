@@ -1,0 +1,463 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://users.jyu.fi/~rhremon/cv-ontology.owl#"
+     xml:base="http://users.jyu.fi/~rhremon/cv-ontology.owl"
+     xmlns:cv="http://users.jyu.fi/~rhremon/cv-ontology.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:tut="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl">
+        <owl:imports rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasAchievement -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasAchievement">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Person"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Achievement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasContactInfo -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasContactInfo">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Person"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Contact"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasProject -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasProject">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Person"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasSkill -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasSkill">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Person"/>
+        <rdfs:range rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasStudyRecord -->
+
+    <owl:ObjectProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasStudyRecord">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#StudyRecord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasDuration">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#StudyRecord"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasEmail -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasEmail">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasFirstName -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasFirstName">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasJobTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasJobTitle">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#JobRecord"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasLastName -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasLastName">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasNationality -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasNationality">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasPhone -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasPhone">
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Contact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasProfileURL -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasProfileURL">
+        <rdfs:domain rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Contact"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#hasProgramMajor -->
+
+    <owl:DatatypeProperty rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasProgramMajor">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#StudyRecord"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#isValidTo -->
+
+    <rdf:Description rdf:about="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#isValidTo">
+        <rdfs:domain rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Record"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Achievement -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Achievement"/>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#BSc -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#BSc">
+        <rdfs:subClassOf rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Educational_Degree"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Brac_University -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Brac_University">
+        <rdfs:subClassOf rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Educational_Institution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Contact -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Contact"/>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#MSc -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#MSc">
+        <rdfs:subClassOf rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Educational_Degree"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Project -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Project"/>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Skill -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Skill"/>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Study_BRAC_BSc -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Study_BRAC_BSc">
+        <rdfs:subClassOf rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#StudyRecord"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Study_JYU_MSc -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Study_JYU_MSc">
+        <rdfs:subClassOf rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#StudyRecord"/>
+    </owl:Class>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#University_of_Jyvaskyla -->
+
+    <owl:Class rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#University_of_Jyvaskyla">
+        <rdfs:subClassOf rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Educational_Institution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Person -->
+
+    <rdf:Description rdf:about="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#hasRecord"/>
+                <owl:someValuesFrom rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#StudyRecord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#hasRecord"/>
+                <owl:allValuesFrom rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#StudyRecord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#StudyRecord -->
+
+    <rdf:Description rdf:about="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#StudyRecord">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#hasInstitution"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Educational_Institution"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#hasIntendedDegree"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Educational_Degree"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasDuration"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#hasProgramMajor"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#BSc_i -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#BSc_i">
+        <rdf:type rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Educational_Degree"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Brac_University_i -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Brac_University_i">
+        <rdf:type rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Educational_Institution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Client_Experience_Professional -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Client_Experience_Professional">
+        <rdf:type rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Profession"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Contact_1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Contact_1">
+        <rdf:type rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Contact"/>
+        <hasEmail>remon@example.com</hasEmail>
+        <hasProfileURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/hasanrkb7</hasProfileURL>
+        <hasProfileURL rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.linkedin.com/in/rakibul-hasan-remon</hasProfileURL>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Job_NV_2023 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Job_NV_2023">
+        <rdf:type rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#JobRecord"/>
+        <tut:hasEmployer rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Next_Ventures"/>
+        <tut:hasReferenceToProfession rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Client_Experience_Professional"/>
+        <hasJobTitle>Executive, Client Experience</hasJobTitle>
+        <tut:isValidFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-11-01T00:00:00</tut:isValidFrom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Job_XIMA_2022 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Job_XIMA_2022">
+        <rdf:type rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#JobRecord"/>
+        <tut:hasEmployer rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#X_Integrated_Marketing_Agency"/>
+        <tut:hasReferenceToProfession rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Client_Experience_Professional"/>
+        <hasJobTitle>Junior Engagement Officer</hasJobTitle>
+        <tut:isValidFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-01T00:00:00</tut:isValidFrom>
+        <tut:isValidTo rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-10-31T00:00:00</tut:isValidTo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#MSc_i -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#MSc_i">
+        <rdf:type rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Educational_Degree"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Next_Ventures -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Next_Ventures">
+        <rdf:type rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Company"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#Person_1 -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#Person_1">
+        <rdf:type rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Person"/>
+        <hasContactInfo rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Contact_1"/>
+        <hasStudyRecord rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#SR_BRAC_BSc"/>
+        <hasStudyRecord rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#SR_JYU_MSc"/>
+        <tut:hasJobRecord rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Job_NV_2023"/>
+        <tut:hasJobRecord rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Job_XIMA_2022"/>
+        <tut:hasRecord rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#SR_BRAC_BSc"/>
+        <tut:hasRecord rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#SR_JYU_MSc"/>
+        <hasEmail>remon@example.com</hasEmail>
+        <hasFirstName>Rakibul Hasan</hasFirstName>
+        <hasLastName>Remon</hasLastName>
+        <hasNationality>Bangladeshi</hasNationality>
+        <tut:hasGender>Male</tut:hasGender>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#SR_BRAC_BSc -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#SR_BRAC_BSc">
+        <rdf:type rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#StudyRecord"/>
+        <tut:hasInstitution rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#Brac_University_i"/>
+        <tut:hasIntendedDegree rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#BSc_i"/>
+        <hasDuration>Sep 2018 – Oct 2022</hasDuration>
+        <hasProgramMajor>Computer Science &amp; Engineering</hasProgramMajor>
+        <tut:isValidFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-09-01T00:00:00</tut:isValidFrom>
+        <tut:isValidTo rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-08-31T00:00:00</tut:isValidTo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#SR_JYU_MSc -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#SR_JYU_MSc">
+        <rdf:type rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#StudyRecord"/>
+        <tut:hasInstitution rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#University_of_Jyvaskyla_i"/>
+        <tut:hasIntendedDegree rdf:resource="http://users.jyu.fi/~rhremon/cv-ontology.owl#MSc_i"/>
+        <hasDuration>Sep 2025 – Ongoing</hasDuration>
+        <hasProgramMajor>Artificial Intelligence</hasProgramMajor>
+        <tut:isValidFrom rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2023-09-01T00:00:00</tut:isValidFrom>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#University_of_Jyvaskyla_i -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#University_of_Jyvaskyla_i">
+        <rdf:type rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Educational_Institution"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://users.jyu.fi/~rhremon/cv-ontology.owl#X_Integrated_Marketing_Agency -->
+
+    <owl:NamedIndividual rdf:about="http://users.jyu.fi/~rhremon/cv-ontology.owl#X_Integrated_Marketing_Agency">
+        <rdf:type rdf:resource="http://www.cs.jyu.fi/ai/vagan/ontologies/2020/tutorial-2020.owl#Company"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
